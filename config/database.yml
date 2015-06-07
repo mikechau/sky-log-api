@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+  port: 5432
+
+development:
+  <<: *default
+  database: sky-log-api_development
+
+test:
+  <<: *default
+  database: sky-log-api_test
+
+production:
+  <<: *default
+  database: sky-log-api_production
+  pool: 20
