@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe TravelLogsController, :type => :controller do
+describe TravelLogsController, type: :controller do
   let(:travel_log) { create(:travel_log) }
 
   describe 'GET show' do

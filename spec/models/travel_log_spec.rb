@@ -11,7 +11,7 @@ describe TravelLog, type: :model do
 
     it 'has error messages' do
       new_travel_log.valid?
-      expect(new_travel_log.errors.messages.any?).to be_truthy
+      expect(new_travel_log.errors.keys).to contain_exactly(:key, :edit_key)
     end
   end
 
