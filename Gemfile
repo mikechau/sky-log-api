@@ -24,6 +24,8 @@ gem 'to_json', github: 'ahacking/to_json'
 
 gem 'figaro'
 
+gem 'rack-cors'
+
 group :production do
   gem 'passenger'
 

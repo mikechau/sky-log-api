@@ -41,15 +41,15 @@ describe TravelLogsController, type: :controller do
     end
   end
 
-  describe 'PUT update' do
+  describe 'PATCH update' do
     context 'with valid params' do
       it 'returns a 200' do
-        put :update, key: travel_log.key, secret: travel_log.edit_key, data: {}
+        patch :update, key: travel_log.key, secret: travel_log.edit_key, data: {}
         expect(response.status).to eq(200)
       end
 
       it 'updates a travel log' do
-        put :update, key: travel_log.key, secret: travel_log.edit_key, data: { test: 'test' }
+        patch :update, key: travel_log.key, secret: travel_log.edit_key, data: { test: 'test' }
 
         travel_log.reload
 
@@ -62,7 +62,7 @@ describe TravelLogsController, type: :controller do
 
     context 'with invalid params' do
       it 'returns a 401' do
-        put :update, key: travel_log.key, secret: 'bad-secret', data: { test: 'test2' }
+        patch :update, key: travel_log.key, secret: 'bad-secret', data: { test: 'test2' }
 
         expect(response.status).to eq(401)
       end
@@ -70,7 +70,7 @@ describe TravelLogsController, type: :controller do
       it 'does not update the travel log' do
         invalid_data = { test: 'testing' }
 
-        put :update, key: travel_log.key, secret: travel_log.edit_key, data: invalid_data
+        patch :update, key: travel_log.key, secret: travel_log.edit_key, data: invalid_data
 
         travel_log.reload
 

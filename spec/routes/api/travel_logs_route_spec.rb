@@ -12,7 +12,7 @@ describe 'routes to the travel logs controller', :type => :routing do
   end
 
   it 'routes update' do
-    expect(put: travel_log_path(1)).
+    expect(patch: travel_log_path(1)).
       to route_to(controller: 'travel_logs', action: 'update', format: 'json', key: '1')
   end
 end
