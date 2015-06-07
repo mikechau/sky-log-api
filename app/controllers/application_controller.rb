@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
 
   rescue_from ActiveRecord::RecordNotFound, with: :record_missing
+  rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
   protected
 
@@ -13,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def record_invalid
-    render json: { error: 'Travel Log validation failed!' }, status: 500
+    render json: { error: 'Travel Log validation failed!' }, status: 506
   end
 end

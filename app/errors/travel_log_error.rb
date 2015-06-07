@@ -1,4 +1,4 @@
 module TravelLogError
   class Error < StandardError; end
-  class InvalidEditKey; end
+  class InvalidEditKey < Error; end
 end

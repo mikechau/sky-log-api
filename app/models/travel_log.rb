@@ -3,14 +3,6 @@ class TravelLog < ActiveRecord::Base
     :edit_key,
     presence: true,
     uniqueness: true
-
-  def client_update!(secret:, params: {})
-    if secret == edit_key
-      update!(params)
-    else
-      fail TravelLogError::InvalidEditKey
-    end
-  end
 end
 
 # == Schema Information

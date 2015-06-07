@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe TravelLog, type: :model do
   let(:new_travel_log) { TravelLog.new }
-  let(:travel_log) { build(:travel_log) }
+  let(:travel_log) { create(:travel_log) }
 
   context 'a invalid travel log' do
     it 'is initialized' do
