@@ -49,7 +49,7 @@ group :test, :development do
 end
 
 group :development do
-  gem 'annotate', ">= 2.6.0"
+  gem 'annotate', '>= 2.6.0'
   gem 'better_errors', '>= 1.1.0'
   gem 'binding_of_caller', '>= 0.7.2'
   gem 'quiet_assets', '>= 1.0.2'
