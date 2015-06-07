@@ -2,7 +2,7 @@ class TravelLogsController < ApplicationController
 
   def show
     travel_log = TravelLog.find_by!(key: params[:key])
-    render json: ToJson::Serializer.json!(travel_log)
+    render json: TravelLogSerializer.json!(travel_log)
   end
 
   def create
