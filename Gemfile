@@ -31,6 +31,8 @@ group :production do
 
   gem 'rails_12factor',
     git: 'git://github.com/heroku/rails_12factor.git'
+
+  gem 'newrelic_rpm'
 end
 
 group :test do
